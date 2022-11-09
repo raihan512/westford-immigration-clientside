@@ -36,16 +36,26 @@ const AddReview = ({ service }) => {
     return (
         <div>
             <h4 className='text-xl text-red-2 font-bold my-5'>Add your review</h4>
-            <form onSubmit={handleAddReview}>
-                <textarea
-                    name="message"
-                    placeholder='Give you review here'
-                    className='w-full h-20 border rounded-sm p-2'>
-                </textarea>
-                <button
-                    type="submit"
-                    className='p-2 px-5 rounded-sm bg-red-2 text-white'>Add Review</button>
-            </form>
+            {
+                user?.user?.email ?
+                    <>
+                        <form onSubmit={handleAddReview}>
+                            <textarea
+                                name="message"
+                                placeholder='Give you review here'
+                                className='w-full h-20 border rounded-sm p-2'>
+                            </textarea>
+                            <button
+                                type="submit"
+                                className='p-2 px-5 rounded-sm bg-red-2 text-white'>Add Review</button>
+                        </form>
+                    </>
+                    :
+                    <>
+                        <h3 className='text-xl font-bold '>Plese Login to add your review</h3>
+                    </>
+            }
+
         </div>
     );
 };

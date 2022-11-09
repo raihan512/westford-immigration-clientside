@@ -9,8 +9,8 @@ const ServicePage = () => {
     return (
         <div className='max-w-screen-xl mx-auto my-20'>
             <ServiceDetails service={service}></ServiceDetails>
-            <AddReview service={service}></AddReview>
             <ShowReview service={service}></ShowReview>
+            <AddReview service={service}></AddReview>
         </div>
     );
 };
