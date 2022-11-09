@@ -1,27 +1,35 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthProvider } from '../../../../Context/AuthContext/AuthContext';
 
 const AddReview = ({ service }) => {
     const user = useContext(AuthProvider);
+    const [review, setReview] = useState({});
+
 
     const handleAddReview = event => {
         event.preventDefault();
-        const message = event.target.message.value;
-        console.log(message);
+        const text = event.target.message.value;
+        const userEmail = user.user.email;
+        const serviceId = service._id;
+        const userImg = user.user.photoURL;
 
+        const userReview = { text, userEmail, userImg, serviceId }
+        setReview(userReview);
+        console.log(review);
         fetch('http://localhost:5000/addreview', {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(review)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                // if (data.acknowledged === true) {
-                //     alert("user added succssfully")
-                // }
+                if (data.acknowledged === true) {
+                    alert("added succssfully")
+                    event.target.reset();
+                }
             })
     }
 

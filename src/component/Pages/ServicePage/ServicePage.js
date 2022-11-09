@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AddReview from './AddReview/AddReview';
 import ServiceDetails from './ServiceDetails/ServiceDetails';
+import ShowReview from './ShowReview/ShowReview';
 
 const ServicePage = () => {
     const service = useLoaderData();
@@ -9,6 +10,7 @@ const ServicePage = () => {
         <div className='max-w-screen-xl mx-auto my-20'>
             <ServiceDetails service={service}></ServiceDetails>
             <AddReview service={service}></AddReview>
+            <ShowReview service={service}></ShowReview>
         </div>
     );
 };
