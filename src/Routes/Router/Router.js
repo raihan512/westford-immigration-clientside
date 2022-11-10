@@ -6,6 +6,8 @@ import Home from "../../component/Pages/Home/Home/Home";
 import Services from "../../component/Pages/Services/Services";
 import Main from "../../Layout/Main/Main";
 import ServicePage from "../../component/Pages/ServicePage/ServicePage";
+import MyReviews from "../../component/Pages/MyReviews/MyReviews";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +32,12 @@ export const router = createBrowserRouter([
             {
                 path: "/about-us",
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path: "my-reviews",
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
+                loader: () => fetch("http://localhost:5000/services")
+
             },
             {
                 path: "/login",
