@@ -20,6 +20,10 @@ const Header = () => {
                         className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                     >Services
                     </Link>
+                    <Link to='/blog'
+                        className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
+                    >Blog
+                    </Link>
                     {
                         user?.uid ?
                             <>
