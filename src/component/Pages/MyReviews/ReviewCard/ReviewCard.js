@@ -4,16 +4,35 @@ const ReviewCard = ({ review, services }) => {
     const reviewId = review.serviceId;
     const servicesId = services.filter(service => service._id === reviewId);
     const serviceDetails = servicesId[0];
+
+
+    const handleDelete = (reviewId) => {
+        const deleteReview = window.confirm(`You want to delete your review from ${serviceDetails.title} service?`)
+        if (deleteReview) {
+            fetch(`http://localhost:5000/reviews/${reviewId}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.acknowledged) {
+                        alert('Review Deleted')
+                    }
+                })
+        }
+    }
+
     return (
         <div className="card w-96 bg-base-100 shadow-xl my-3">
             <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    {serviceDetails.title}
+                    ServiceName:  {serviceDetails.title}
                 </h2>
-                <p>{review.text}</p>
+                <p>My Review: {review.text}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary">Update</button>
+                    <button className="btn btn-primary" onClick={() => handleDelete(review._id)}>Delete</button>
                 </div>
             </div>
         </div>

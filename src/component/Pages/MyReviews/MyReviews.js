@@ -16,16 +16,27 @@ const MyReviews = () => {
 
     return (
         <div className='max-w-screen-xl mx-auto my-20'>
-            <h3 className='text-4xl text-red-2 font-bold uppercase'>You wrote {reviews.length} reviews</h3>
-            <div className='flex justify-between flex-wrap'>
-                {
-                    reviews.map(review => <ReviewCard
-                        key={review._id}
-                        services={services}
-                        review={review}
-                    ></ReviewCard>)
-                }
-            </div>
+            {
+                reviews.length > 0 ?
+                    <>
+                        <h3 className='text-4xl text-red-2 font-bold uppercase'>You wrote {reviews.length} reviews</h3>
+                        <div className='flex justify-between flex-wrap'>
+                            {
+                                reviews.map(review => <ReviewCard
+                                    key={review._id}
+                                    services={services}
+                                    review={review}
+                                ></ReviewCard>)
+                            }
+                        </div>
+                    </>
+                    :
+                    <>
+                        <div className='flex justify-center items-center h-96'>
+                            <h3 className='text-4xl text-red-2 font-bold uppercase'>No Reviews Added</h3>
+                        </div>
+                    </>
+            }
         </div>
     );
 };
