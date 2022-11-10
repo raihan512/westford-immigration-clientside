@@ -13,7 +13,7 @@ const ShowReview = ({ service }) => {
     }, [reviews])
     return (
         <div>
-            <h3 className='text-3xl text-red-2 font-bold'>Users reviews about this post</h3>
+            <h3 className='text-xl md:text-2xl lg:text-3xl text-red-2 font-bold'>Users reviews about this post</h3>
             {
                 reviews.length === 0 ?
                     <>

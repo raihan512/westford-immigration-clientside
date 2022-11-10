@@ -8,29 +8,26 @@ const Header = () => {
         logout()
     }
     return (
-        <nav className='py-3 shadow-md'>
-            <div className='flex justify-between items-center max-w-screen-xl mx-auto'>
+        <nav className='p-3 shadow-md'>
+            <div className='md:flex justify-between items-center max-w-screen-xl mx-auto'>
                 <h3 className='text-2xl uppercase font-bold text-blue-1'>West<span className='text-red-1'>ford</span></h3>
-                <div className='flex'>
+                <div className='flex md:flex-row flex-col'>
                     <Link to='/'
-                        className='text-paragraph-color font-semibold ml-5 hover:text-blue-1 hover:font-bold'
+                        className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                     >Home
                     </Link>
                     <Link to='/services'
-                        className='text-paragraph-color font-semibold ml-5 hover:text-blue-1 hover:font-bold'
+                        className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                     >Services
                     </Link>
-                    <Link to='/about-us'
-                        className='text-paragraph-color font-semibold ml-5 hover:text-blue-1 hover:font-bold'
-                    >About Us</Link>
                     {
                         user?.uid ?
                             <>
                                 <Link to='/add-service'
-                                    className='text-paragraph-color font-semibold ml-5 hover:text-blue-1 hover:font-bold'
+                                    className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                                 >ADD Service</Link>
                                 <Link to='/my-reviews'
-                                    className='text-paragraph-color font-semibold ml-5 hover:text-blue-1 hover:font-bold'
+                                    className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                                 >My Reviews</Link>
                             </>
                             : <></>
@@ -39,7 +36,7 @@ const Header = () => {
                 <div className='flex items-center'>
                     {
                         user?.uid ?
-                            <button onClick={handleLogOut} className='bg-red-2 py-2 px-5 text-white rounded-sm ml-2'>
+                            <button onClick={handleLogOut} className='bg-red-2 py-2 px-5 text-white rounded-sm md:ml-2'>
                                 <Link className='font-semibold'>Logout</Link>
                             </button>
                             :

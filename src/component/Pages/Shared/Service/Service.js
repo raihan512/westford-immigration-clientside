@@ -13,8 +13,8 @@ const Service = ({ service }) => {
                     <img src={img} alt="" />
                 </PhotoView>
             </PhotoProvider>
-            <h4 className='text-2xl font-bold text-red-2 text-left'>{title}</h4>
-            <p className='text-left text-md mt-3'>
+            <h4 className='text-lg md:text-2xl font-bold text-red-2 text-left'>{title}</h4>
+            <p className='text-left text-md mt-3 text-sm md:text-md'>
                 {
                     desc.length > 100 ?
                         <>
@@ -26,12 +26,12 @@ const Service = ({ service }) => {
                         </>
                 }
             </p>
-            <p className='flex justify-between text-xl font-bold text-red-2'>
+            <p className='flex justify-between text-md md:text-xl font-bold text-red-2'>
                 <span>Fee</span>
                 <span>${price}</span>
             </p>
-            <button className='py-2 px-4 bg-red-2 mt-2'>
-                <Link to={`/services/${_id}`} className='text-md font-semibold text-white rounded-sm' >View Details</Link>
+            <button className='py-2 px-4 bg-red-2 mt-2 rounded-sm'>
+                <Link to={`/services/${_id}`} className='text-sm md:text-md font-semibold text-white' >View Details</Link>
             </button>
         </div>
     );

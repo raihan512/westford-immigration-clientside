@@ -15,7 +15,7 @@ const AddReview = ({ service }) => {
 
         const userReview = { text, userEmail, userImg, serviceId }
         setReview(userReview);
-        console.log(review);
+        console.log(userReview);
         fetch('http://localhost:5000/addreview', {
             method: "POST",
             headers: {

@@ -23,7 +23,7 @@ const ReviewCard = ({ review, services }) => {
     }
 
     return (
-        <div className="card w-96 bg-base-100 shadow-xl my-3">
+        <div className="card w-96 border rounded-sm shadow-sm my-3">
             <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
@@ -31,8 +31,8 @@ const ReviewCard = ({ review, services }) => {
                 </h2>
                 <p>My Review: {review.text}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Update</button>
-                    <button className="btn btn-primary" onClick={() => handleDelete(review._id)}>Delete</button>
+                    <button className="btn bg-blue-2 rounded-sm border-0">Update</button>
+                    <button className="btn bg-red-2 rounded-sm border-0" onClick={() => handleDelete(review._id)}>Delete</button>
                 </div>
             </div>
         </div>

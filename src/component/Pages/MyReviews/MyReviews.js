@@ -19,8 +19,8 @@ const MyReviews = () => {
             {
                 reviews.length > 0 ?
                     <>
-                        <h3 className='text-4xl text-red-2 font-bold uppercase'>You wrote {reviews.length} reviews</h3>
-                        <div className='flex justify-between flex-wrap'>
+                        <h3 className='text-lg md:text-2xl lg:text-5xl font-bold text-blue-2 text-center uppercase mb-3'>You wrote {reviews.length} reviews</h3>
+                        <div className='flex justify-center flex-wrap mx-5'>
                             {
                                 reviews.map(review => <ReviewCard
                                     key={review._id}
@@ -33,7 +33,7 @@ const MyReviews = () => {
                     :
                     <>
                         <div className='flex justify-center items-center h-96'>
-                            <h3 className='text-4xl text-red-2 font-bold uppercase'>No Reviews Added</h3>
+                            <h3 className='text-lg md:text-2xl lg:text-4xl text-red-2 font-bold uppercase'>No Reviews Added</h3>
                         </div>
                     </>
             }
