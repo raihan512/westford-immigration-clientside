@@ -12,7 +12,9 @@ const Services = ({ services }) => {
                         service={service}
                     ></Service>)
                 }
-
+                {/* {
+                    services.slice()
+                } */}
             </div>
             <div className='mt-2 flex justify-end'>
                 <button className='py-2 px-10 bg-blue-2  text-sm md:text-md text-white rounded-sm'>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AddService = () => {
+    const navigate = useNavigate()
     const handleAddService = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +21,14 @@ const AddService = () => {
             body: JSON.stringify(service)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Service Added')
+                }
+                form.reset();
+                navigate('/')
+            })
             .catch(error => console.error(error))
     }
     return (

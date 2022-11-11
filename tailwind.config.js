@@ -18,5 +18,5 @@ module.exports = {
       'black': '#00000'
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('flowbite/plugin')],
 }

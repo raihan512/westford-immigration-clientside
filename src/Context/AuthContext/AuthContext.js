@@ -14,9 +14,11 @@ const AuthContext = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
     const loginUser = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+        setLoading(false)
+        return signInWithEmailAndPassword(auth, email, password);
     }
     const googleLogin = () => {
+        setLoading(false)
         return signInWithPopup(auth, provider);
     }
 
