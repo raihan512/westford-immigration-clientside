@@ -27,7 +27,7 @@ const Header = () => {
                     {
                         user?.uid ?
                             <>
-                                <Link to='/add-service'
+                                <Link to='/addservice'
                                     className='text-paragraph-color font-semibold md:ml-5 hover:text-blue-1 hover:font-bold'
                                 >ADD Service</Link>
                                 <Link to='/my-reviews'

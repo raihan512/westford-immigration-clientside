@@ -23,7 +23,7 @@ const ReviewCard = ({ review, services }) => {
     }
 
     return (
-        <div className="card w-96 border rounded-sm shadow-sm my-3">
+        <div className="card w-96 mx-2 border rounded-sm shadow-sm my-3">
             <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">

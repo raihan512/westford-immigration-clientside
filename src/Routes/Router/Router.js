@@ -9,6 +9,7 @@ import ServicePage from "../../component/Pages/ServicePage/ServicePage";
 import MyReviews from "../../component/Pages/MyReviews/MyReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Blog from "../../component/Pages/Blog/Blog";
+import AddService from "../../component/Pages/AddService/AddService";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
                 path: "/services/:id",
                 element: <ServicePage></ServicePage>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: "addservice",
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {
                 path: "my-reviews",
