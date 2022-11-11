@@ -23,7 +23,7 @@ const AddReview = ({ service }) => {
         if (addReview.text < 10) {
             alert('Please add a meaningful review')
         } else {
-            fetch('http://localhost:5000/reviews', {
+            fetch('https://server-liart-six.vercel.app/reviews', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

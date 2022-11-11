@@ -10,7 +10,7 @@ const MyReviews = () => {
     const services = useLoaderData();
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?userEmail=${user?.user?.email}`)
+        fetch(`https://server-liart-six.vercel.app/reviews?userEmail=${user?.user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(error => console.error(error))

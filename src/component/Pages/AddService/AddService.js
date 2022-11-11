@@ -23,7 +23,7 @@ const AddService = () => {
         const service = { title, img, desc, price }
         if (title && img && desc && price) {
             // Send service data to the server
-            fetch('http://localhost:5000/services', {
+            fetch('https://server-liart-six.vercel.app/services', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
