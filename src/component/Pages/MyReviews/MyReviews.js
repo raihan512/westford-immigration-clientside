@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthProvider } from '../../../Context/AuthContext/AuthContext';
+import UseTitle from '../../../UseTitle/UseTitle';
 import ReviewCard from './ReviewCard/ReviewCard';
 
 const MyReviews = () => {
+    UseTitle('My Reviews')
     const user = useContext(AuthProvider);
     const services = useLoaderData();
     const [reviews, setReviews] = useState([]);

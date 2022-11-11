@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UseTitle from '../../../UseTitle/UseTitle';
 
 const AddService = () => {
+    // Set Title
+    UseTitle('Add Service')
     // Creating toast function
     const notify = () => toast("Service Added Successfully");
     // Error message initial value set
