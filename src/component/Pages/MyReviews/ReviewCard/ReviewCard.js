@@ -1,9 +1,13 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewCard = ({ review, services }) => {
+    const deleteReviewToast = () => toast("Review deleted");
     const reviewId = review.serviceId;
     const servicesId = services.filter(service => service._id === reviewId);
     const serviceDetails = servicesId[0];
+
 
 
     const handleDelete = (reviewId) => {
@@ -16,7 +20,7 @@ const ReviewCard = ({ review, services }) => {
                 .then(data => {
                     console.log(data);
                     if (data.acknowledged) {
-                        alert('Review Deleted')
+                        deleteReviewToast();
                     }
                 })
         }
@@ -34,6 +38,7 @@ const ReviewCard = ({ review, services }) => {
                     <button className="btn bg-blue-2 rounded-sm border-0">Update</button>
                     <button className="btn bg-red-2 rounded-sm border-0" onClick={() => handleDelete(review._id)}>Delete</button>
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );

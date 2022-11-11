@@ -6,6 +6,7 @@ import ShowReview from './ShowReview/ShowReview';
 
 const ServicePage = () => {
     const service = useLoaderData();
+
     return (
         <div className='max-w-screen-xl mx-auto my-20'>
             <div className='mx-5 lg:mx-0'>
