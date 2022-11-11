@@ -7,13 +7,14 @@ const ReviewCard = ({ review, services }) => {
     const reviewId = review.serviceId;
     const servicesId = services.filter(service => service._id === reviewId);
     const serviceDetails = servicesId[0];
+    console.log(servicesId);
 
 
 
     const handleDelete = (reviewId) => {
-        const deleteReview = window.confirm(`You want to delete your review from ${serviceDetails.title} service?`)
+        const deleteReview = window.confirm(`You want to delete service?`)
         if (deleteReview) {
-            fetch(`https://server-liart-six.vercel.app/reviews/${reviewId}`, {
+            fetch(`http://localhost:5000/reviews/${reviewId}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -28,10 +29,10 @@ const ReviewCard = ({ review, services }) => {
 
     return (
         <div className="card w-96 mx-2 border rounded-sm shadow-sm my-3">
-            <figure><img src={serviceDetails.img} alt="Shoes" /></figure>
+            <figure><img src={serviceDetails?.img} alt="Canada" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
-                    ServiceName:  {serviceDetails.title}
+                    ServiceName:  {serviceDetails?.title}
                 </h2>
                 <p>My Review: {review.text}</p>
                 <div className="card-actions justify-end">
