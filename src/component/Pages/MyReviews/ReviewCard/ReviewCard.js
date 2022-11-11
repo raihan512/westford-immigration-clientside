@@ -14,7 +14,7 @@ const ReviewCard = ({ review, services }) => {
     const handleDelete = (reviewId) => {
         const deleteReview = window.confirm(`You want to delete service?`)
         if (deleteReview) {
-            fetch(`http://localhost:5000/reviews/${reviewId}`, {
+            fetch(`https://server-liart-six.vercel.app/reviews/${reviewId}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
