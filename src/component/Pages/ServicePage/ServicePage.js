@@ -10,13 +10,13 @@ const ServicePage = () => {
     const service = useLoaderData();
 
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <section className='max-w-screen-xl mx-auto my-20'>
             <div className='mx-5 lg:mx-0'>
                 <ServiceDetails service={service}></ServiceDetails>
                 <ShowReview service={service}></ShowReview>
                 <AddReview service={service}></AddReview>
             </div>
-        </div>
+        </section>
     );
 };
 

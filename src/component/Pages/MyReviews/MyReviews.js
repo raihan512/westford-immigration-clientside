@@ -17,7 +17,7 @@ const MyReviews = () => {
     }, [reviews])
 
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <section className='max-w-screen-xl mx-auto my-20'>
             {
                 reviews.length > 0 ?
                     <>
@@ -39,7 +39,7 @@ const MyReviews = () => {
                         </div>
                     </>
             }
-        </div>
+        </section>
     );
 };
 

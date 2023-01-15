@@ -2,7 +2,7 @@ import React from 'react';
 
 const Fees = () => {
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <section className='max-w-screen-xl mx-auto my-20'>
             <h3 className='text-lg md:text-5xl font-bold text-blue-2 text-center uppercase mb-3'>Fees</h3>
             {/* Fee Item */}
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-sm">
@@ -64,7 +64,7 @@ const Fees = () => {
                     <p>2nd Installment: At File Submission for Work Permit</p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

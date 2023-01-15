@@ -4,7 +4,7 @@ import UseTitle from '../../../UseTitle/UseTitle';
 const Blog = () => {
     UseTitle('Blog')
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <section className='max-w-screen-xl mx-auto my-20'>
             <h3 className='text-lg md:text-5xl font-bold text-blue-2 text-center uppercase mb-3'>Blog</h3>
             {/* Blog Item */}
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-sm">
@@ -46,8 +46,7 @@ const Blog = () => {
                     <p>Node js is a non blocking server side runtime. It handle request asyncronously. It holds requests and when the all requests are complete then it complete that hold request also</p>
                 </div>
             </div>
-
-        </div>
+        </section>
     );
 };
 

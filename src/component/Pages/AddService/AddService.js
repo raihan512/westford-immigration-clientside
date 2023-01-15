@@ -46,7 +46,7 @@ const AddService = () => {
 
     }
     return (
-        <div className='max-w-screen-xl mx-auto my-20'>
+        <section className='max-w-screen-xl mx-auto my-20'>
             <h3 className='text-xl text-red-2 font-bold my-5 text-center'>Add a new service</h3>
             {/* Addservice form  */}
             <form className='w-full flex flex-col items-center' onSubmit={handleAddService}>
@@ -66,7 +66,7 @@ const AddService = () => {
                 {/* Set position for toast function */}
                 < ToastContainer />
             </form>
-        </div>
+        </section>
     );
 };
 

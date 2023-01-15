@@ -6,7 +6,7 @@ const Services = () => {
     UseTitle("All Services")
     const services = useLoaderData()
     return (
-        <div>
+        <section>
             <div className='max-w-screen-xl mx-auto my-20'>
                 <h3
                     className='text-lg md:text-2xl lg:text-5xl font-bold text-blue-2 text-center uppercase mb-3'
@@ -20,7 +20,7 @@ const Services = () => {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
